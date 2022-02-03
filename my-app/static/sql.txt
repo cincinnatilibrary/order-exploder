@@ -1,0 +1,46 @@
+select
+  order_status_code,
+  order_status_name,
+  count(*) as count
+from
+  orders
+group by
+  1,
+  2
+order by
+  3 DESC;
+
+
+select
+  order_record_num,
+  orders_display_order,
+  -- order_record_id,
+  count_cmf,
+  -- count_distinct_cmf_fund_codes,
+  sum_cmf_copies,
+  --cmf_data
+  -- orders_display_order,
+  bib_record_id,
+  date(creation_date_gmt) as create_date,
+  -- accounting_unit_code_num,
+  estimated_price_cents / 100.0 as est_price,
+  -- physical_form_code,
+  physical_form_name,
+  date(order_date_gmt) as order_date,
+  date(catalog_date_gmt) as cat_date,
+  -- order_type_code,
+  order_type_name as order_type,
+  date(received_date_gmt) as received_date,
+  -- receiving_location_code,
+  -- order_status_code,
+  order_status_name,
+  -- vendor_record_code,
+  -- vendor_record_id,
+  volume_count
+from
+  orders
+where
+  orders.order_status_code = 'o'
+order by
+  --create_date DESC,
+  order_record_num -- orders_display_order

@@ -1,0 +1,14 @@
+[Unit]
+Description=Datasette Order Exploder
+After=network.target
+
+[Service]
+Type=simple
+User=plchuser
+Environment=DATASETTE_SECRET=
+WorkingDirectory=/home/plchuser/output/order-exploder
+ExecStart=/home/plchuser/output/order-exploder/start_datasette.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
