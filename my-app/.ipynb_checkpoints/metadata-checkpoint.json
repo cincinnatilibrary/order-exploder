@@ -1,1 +1,0 @@
-{"title": "Order Exploder", "databases": {"current_orders": {"queries": {"invoice_with_order": {"sql": "SELECT\n  invoice.*\nFROM\n  invoice,\n  json_each(invoice.json_invoice_record_line)\nWHERE\n  json_extract(value, '$.order_record_num') = :order_record_num\n"}}}}}

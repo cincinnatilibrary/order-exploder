@@ -1,7 +1,0 @@
-{
-    "max_returned_rows": 10000,
-    "facet_time_limit_ms": 15000,
-    "sql_time_limit_ms" : 60000,
-    "base_url": "/order-exploder/",
-    "num_sql_threads": 5
-}
