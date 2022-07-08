@@ -6,8 +6,8 @@ After=network.target
 Type=simple
 User=plchuser
 Environment=DATASETTE_SECRET=
-WorkingDirectory=/home/plchuser/output/order-exploder
-ExecStart=/home/plchuser/output/order-exploder/start_datasette.sh
+WorkingDirectory=/home/plchuser/order-exploder
+ExecStart=/home/plchuser/order-exploder/start_datasette.sh
 Restart=on-failure
 
 [Install]
